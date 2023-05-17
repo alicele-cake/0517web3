@@ -11,6 +11,15 @@ namespace Web411018141.Controllers
         // GET: Water
         public ActionResult Index(string name,float? weight)
         {
+            var result = "";
+            if (weight.HasValue)
+            {
+                result = (weight * 30) + "cc";
+            }
+
+            ViewBag.Name = name;
+            ViewBag.result=result;
+
             return View();
         }
     }
